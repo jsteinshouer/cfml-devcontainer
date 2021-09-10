@@ -1,0 +1,25 @@
+{
+	"name": "CFML / CommandBox Devcontainer",
+	// You could also build an image and use it
+	// i.e. docker build -t <dockerhub username>/cfml-devcontainer:latest --target cfml-devcontainer .
+	//"image": "<dockerhub username>/cfml-devcontainer:latest",
+	"dockerFile": "Dockerfile",
+	"build": {
+		"target": "with-node"
+	},
+	"workspaceFolder": "/app",
+	"workspaceMount": "source=${localWorkspaceFolder},target=/app,type=bind,consistency=cached",
+
+	// Set *default* container specific settings.json values on container create.
+	"settings": { 
+		"cflint.jarPath": "/usr/local/lib/CommandBox/cfml/modules/commandbox-cflint/lib/CFLint-1.5.0-all/CFLint-1.5.0-all.jar",
+		"cflint.enabled": true
+	},
+
+	// Add the IDs of extensions you want installed when the container is created.
+	"extensions": [
+		"formulahendry.auto-close-tag",
+		"kamasamak.vscode-cfml",
+		"kamasamak.vscode-cflint"
+	]
+}
